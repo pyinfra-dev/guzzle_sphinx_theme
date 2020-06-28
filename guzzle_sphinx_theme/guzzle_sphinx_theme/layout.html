@@ -62,18 +62,20 @@
 {# Displays the next and previous links both before and after content #}
 {% macro render_relations() -%}
   {% if prev or next %}
-  <div class="footer-relations">
-    {% if prev %}
-      <div class="pull-left">
-        <a class="btn btn-default" href="{{ prev.link|e }}" title="{{ _('previous chapter')}} (use the left arrow)">{{ prev.title }}</a>
-      </div>
-    {% endif %}
-    {%- if next and next.title != '&lt;no title&gt;' %}
-      <div class="pull-right">
-        <a class="btn btn-default" href="{{ next.link|e }}" title="{{ _('next chapter')}} (use the right arrow)">{{ next.title }}</a>
-      </div>
-    {%- endif %}
-    </div>
+  <nav class="footer-relations">
+    <ul class="pager">
+      {% if prev %}
+        <li class="previous"><a href="{{ prev.link|e }}">
+          <span aria-hidden="true">&larr;</span> {{ prev.title }}
+        </a></li>
+      {% endif %}
+      {%- if next and next.title != '&lt;no title&gt;' %}
+        <li class="next"><a href="{{ next.link|e }}">
+          {{ next.title }} <span aria-hidden="true">&rarr;</span>
+        </a></li>
+      {% endif %}
+    </ul>
+  </nav>
     <div class="clearer"></div>
   {% endif %}
 {%- endmacro %}

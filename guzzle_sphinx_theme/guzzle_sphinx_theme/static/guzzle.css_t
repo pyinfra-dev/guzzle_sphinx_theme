@@ -2,7 +2,6 @@
 -------------------------------------------------- */
 
 body {
-  background-color: #edf0f2;
   background: white;
   margin: 0;
   padding: 0;
@@ -23,10 +22,10 @@ body {
 }
 
 #right-column {
-  padding: 20px 0;
-  margin-left: 300px;
-  background-color: #fff;
-  max-width: 900px;
+  padding-top: 20px;
+  padding-left: 300px;
+  margin: 0 auto;
+  max-width: 1300px;
 }
 
 a.headerlink {
@@ -39,9 +38,21 @@ a.headerlink {
   text-decoration: none;
   color: transparent;
 }
+a.headerlink:hover {
+  color: transparent;
+}
 a.headerlink::after {
   content: '#';
-  color: #428bca;
+  color: #53ac63;
+}
+
+a {
+  color: #53ac63;
+}
+a:hover {
+  color: #53ac63;
+  text-decoration-color: #E7E7E7;
+  text-decoration-thickness: 2px;
 }
 
 h1:hover > a.headerlink,
@@ -71,17 +82,18 @@ h1, h2, h3 {
 
 h1 {
   font-size: 38px;
-  padding: 10px 10px 10px 45px;
-  margin: 20px 0 35px -45px;
-  background-color: aliceblue;
-  width: calc(100% + 90px);
+  padding: 10px 10px 10px 0;
   border-bottom: 1px solid #e7e7e7;
+  width: 100%;
 }
 
 h2 {
   font-size: 34px;
   padding: .2em 0;
   border-bottom: 1px solid #e7e7e7;
+}
+h2 code {
+  font-size: 32px;
 }
 
 h3 {
@@ -141,7 +153,6 @@ code, pre {
   line-height: 23px;
   margin: 20px 0;
   word-wrap: normal;
-  /*background-color: #fff;*/
 }
 
 pre {
@@ -154,6 +165,12 @@ pre {
   padding: 14px 0 14px 20px;
   padding-right: 0;
   margin: 20px 0;
+}
+
+pre::selection, pre *::selection,
+code::selection, code *::selection {
+    color: white;
+    background: green;
 }
 
 div.highlight {
@@ -176,6 +193,7 @@ dl.method {
   font-size: 15px;
   margin-bottom: 12px;
   background: #fff;
+  padding: 8px 0;
 }
 
 blockquote {
@@ -250,17 +268,17 @@ div.sphinxsidebar .sidebar-toc a {
 }
 
 .sidebar-toc ul li a:hover {
-  /*background-color: #428bca;*/
+  /*background-color: #53ac63;*/
   /*color: #fff;*/
-  color: #428bca;
+  color: #53ac63;
 }
 
 .sidebar-toc ul li.current > a,
 .sidebar-toc ul li.current > a:hover {
   /*background-color: #e6e6e6;*/
   /*color: #444;*/
-  border-left-color: #428bca;
-  color: #428bca;
+  border-left-color: #53ac63;
+  color: #53ac63;
   font-weight: bold;
 }
 
@@ -329,20 +347,24 @@ div.sphinxsidebar input {
 
 .text-logo {
   font-size: 18px;
-  /*text-align: center;*/
   display: block;
-  padding: 14px 8px 8px 8px;
-  /*color: #fff;*/
+  padding: 16px 8px 4px 8px;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin: 0 0 20px 10px;
+  margin: 0 0 0 10px;
   font-weight: bold;
   color: #606060;
-  /*background-color: #337ab7;*/
-  /*border-bottom: 1px solid #fff;*/
 }
 .text-logo:hover {
   color: #2c3e50;
   text-decoration: none;
+}
+
+.sphinxsidebar p.caption {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #606060;
+    font-size: 14px;
+    margin-left: 17px;
 }
 
 
@@ -408,6 +430,7 @@ table.two-column {
   display: relative;
   border-top: 1px solid #F7F7F7;
   margin-top: 30px;
+  padding: 12px 0;
 }
 
 .rel-spacer {
@@ -419,10 +442,11 @@ table.two-column {
 
 div.footer {
   padding: 25px;
-  font-size: 14px;
+  font-size: 12px;
   color: #888;
-  text-align: right;
-  max-width: 1200px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-left: 300px;
   width: 100%;
 }
 
@@ -532,10 +556,6 @@ div.genindex-jumpbox {
 }
 
 /* -- general body styles --------------------------------------------------- */
-
-.body {
-  padding: 0 45px;
-}
 
 div.body p.caption {
   text-align: inherit;
@@ -1050,3 +1070,24 @@ span.eqno {
 .vg { color: #008080 } /* Name.Variable.Global */
 .vi { color: #008080 } /* Name.Variable.Instance */
 .il { color: #009999 } /* Literal.Number.Integer.Long */
+
+
+/*
+    Index only */
+
+div#pyinfra-documentation div.compound {
+    width: 46%;
+    margin-right: 3%;
+    margin-top: 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+div#pyinfra-documentation div.compound.toctree-wrapper {
+    display: none;
+}
+    div#pyinfra-documentation div.compound a {
+        font-size: 18px;
+    }
+    div#pyinfra-documentation div.compound dd {
+        margin-left: 0;
+    }

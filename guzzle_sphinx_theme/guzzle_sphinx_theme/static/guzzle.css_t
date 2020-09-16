@@ -159,9 +159,7 @@ pre {
   color: #fff;
   background-color: #282c34;
   overflow: auto;
-  border-width: 0 0 0 2px;
-  border-color: #eee;
-  border-style: solid;
+  border: none;
   padding: 14px 0 14px 20px;
   padding-right: 0;
   margin: 20px 0;
@@ -171,6 +169,10 @@ pre::selection, pre *::selection,
 code::selection, code *::selection {
     color: white;
     background: green;
+}
+
+a code {
+  color: #53ac63;
 }
 
 div.highlight {
@@ -348,15 +350,16 @@ div.sphinxsidebar input {
 .text-logo {
   font-size: 18px;
   display: block;
-  padding: 16px 8px 4px 8px;
+  padding: 16px 8px 16px 18px;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin: 0 0 0 10px;
   font-weight: bold;
   color: #606060;
+  margin-bottom: -18px;
 }
 .text-logo:hover {
   color: #2c3e50;
   text-decoration: none;
+  background: #F7F7F7;
 }
 
 .sphinxsidebar p.caption {
@@ -436,6 +439,10 @@ table.two-column {
 
 .rel-spacer {
   height: 40px;
+}
+
+.pager li > a, .pager li > span {
+  border-radius: 4px;
 }
 
 /* Footer styling

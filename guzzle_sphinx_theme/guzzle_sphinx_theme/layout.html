@@ -13,6 +13,18 @@
   {{ super() }}
 {%- endblock %}
 
+{%- block css %}
+    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1)|e }}" type="text/css" />
+    {%- for css in css_files %}
+      {%- if css|attr("filename") %}
+    {{ css_tag(css) }}
+      {%- else %}
+    <link rel="stylesheet" href="{{ pathto(css, 1)|e }}" type="text/css" />
+      {%- endif %}
+    {%- endfor %}
+{%- endblock %}
+
 {%- block extrahead %}
   {% if theme_touch_icon %}
   <link rel="apple-touch-icon" href="{{ pathto('_static/' ~ theme_touch_icon, 1) }}" />

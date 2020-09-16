@@ -2,6 +2,8 @@
 Guzzle Sphinx Theme
 ===================
 
+Note: this is a customized Guzzle theme designed for pyinfra: https://docs.pyinfra.com.
+
 Sphinx theme used by Guzzle: http://guzzlephp.org
 
 Installation

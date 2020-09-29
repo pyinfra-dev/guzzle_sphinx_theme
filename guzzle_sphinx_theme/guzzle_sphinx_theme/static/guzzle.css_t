@@ -11,16 +11,6 @@ body {
   line-height: 1.6;
 }
 
-#left-column {
-  float: left;
-  position: fixed;
-  height: 100%;
-  border-right: 1px solid #e7e7e7;
-  width: 300px;
-  overflow: auto;
-  /*background: #fafafa;*/
-}
-
 #right-column {
   padding-top: 20px;
   padding-left: 300px;
@@ -142,7 +132,7 @@ code, tt {
   color: #476582;
   background: rgba(27,31,35,.05);
   padding: .25rem .5rem;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 tt {
@@ -209,8 +199,96 @@ blockquote {
   font-size: 16px;
 }
 
-/* Sphinx sidebar
+
+/* Header
 -------------------------------------------------- */
+
+header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  height: 0;
+  overflow: visible;
+}
+
+#header-sidebar {
+  width: 300px;
+  border-right: 1px solid #E7E7E7;
+}
+
+.text-logo {
+  font-size: 18px;
+  display: block;
+  padding: 16px 0px 16px 18px;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color: #606060;
+  /*margin-bottom: -18px;*/
+}
+.text-logo:hover {
+  color: #2c3e50;
+  text-decoration: none;
+  /*background: #F7F7F7;*/
+}
+.text-logo img {
+  height: 44px;
+  width: 44px;
+}
+
+form#main-search {
+  padding: 0 18px;
+  border-bottom: 1px solid #E7E7E7;
+}
+input#docsearch-input {
+  width: 264px;
+  border: none;
+  border-bottom: 1px solid #E7E7E7;
+  outline: none;
+  box-shadow: none;
+  border-radius: 4px 4px 0 0;
+  margin-bottom: -1px;
+}
+input#docsearch-input:focus {
+  background: #FFFECC;
+  border-bottom: 1px solid #D7D7D7;
+}
+
+header nav {
+  float: right;
+  margin: 14px 18px 0 0;
+}
+header nav a {
+  margin-left: 10px;
+}
+header nav a, nav a:hover {
+  color: #2c3e50;
+}
+header nav a span.glyphicon {
+  color: #a7a7a7;
+  font-size: 12px;
+  margin-left: 3px;
+}
+header nav a:hover span.glyphicon {
+  color: #a0a0a0;
+}
+
+
+
+/* Sidebar
+-------------------------------------------------- */
+
+#left-column {
+  float: left;
+  position: fixed;
+  top: 110px;
+  bottom: 0;
+  border-right: 1px solid #e7e7e7;
+  width: 300px;
+  overflow: auto;
+  padding-bottom: 30px;
+}
 
 div.sphinxsidebar {
   word-wrap: break-word;
@@ -347,21 +425,6 @@ div.sphinxsidebar input {
     margin: 24px 22px 0 22px;
 }
 
-.text-logo {
-  font-size: 18px;
-  display: block;
-  padding: 16px 8px 16px 18px;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  color: #606060;
-  margin-bottom: -18px;
-}
-.text-logo:hover {
-  color: #2c3e50;
-  text-decoration: none;
-  background: #F7F7F7;
-}
-
 .sphinxsidebar p.caption {
     font-weight: bold;
     text-transform: uppercase;
@@ -371,28 +434,6 @@ div.sphinxsidebar input {
     margin-top: 30px;
 }
 
-
-/* Left-nav search box
--------------------------------------------------- */
-
-#main-search form .input-group {
-  width: 100%;
-  margin: 0 0 12px 0;
-  padding: 0;
-  border: none;
-}
-
-#main-search form .input-group input {
-  padding: 4px;
-  width: 100%;
-  border-radius: 5px;
-  margin: 0;
-  font-size: 15px;
-}
-
-.search-page-form {
-  width: 350px;
-}
 
 /* Two-pane table list
 -------------------------------------------------- */
@@ -646,7 +687,7 @@ p.topic-title {
 
 div.topic.contents {
     display: inline-block;
-    border-radius: 3px;
+    border-radius: 4px;
     padding: 24px 36px 18px 36px;
 }
 
@@ -662,7 +703,7 @@ div.topic.contents > ul {
   background-color: #fff;
   border: 1px solid #eee;
   border-left-width: 6px;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 .admonition dt {
@@ -935,13 +976,22 @@ span.eqno {
   height: 40px;
   width: 100%;
   display: none;
-  padding: 12px;
   border-bottom: 1px solid #ccc;
   position: fixed;
   top: 0;
   left: 0;
   background-color: #fff;
   z-index: 1;
+  padding: 2px 6px;
+}
+#mobile-toggle a.text-logo {
+  display: inline;
+  padding: 0;
+  margin-left: 10px;
+}
+#mobile-toggle a.text-logo img {
+  width: 32px;
+  height: 32px;
 }
 
 /* Small screen styles
@@ -1000,6 +1050,10 @@ span.eqno {
 
   #mobile-toggle {
     display: block;
+  }
+
+  #header-sidebar {
+    display: none;
   }
 
   p {

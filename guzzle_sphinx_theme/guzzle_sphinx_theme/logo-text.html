@@ -1,1 +1,5 @@
-<a href="{{ homepage() }}" class="text-logo">{{ theme_project_nav_name or shorttitle }}</a>
+{% set index_path = pathto('index') %}
+<a href="{{ 'index.html' if index_path == '#' else index_path }}" class="text-logo">
+    <img src="{{ pathto('_static/logo_small.png', 1) }}" />
+    pyinfra
+</a>

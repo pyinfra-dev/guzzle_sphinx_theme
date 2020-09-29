@@ -9,6 +9,9 @@
   <link rel="stylesheet" type="text/css" href="{{ pathto('_static/fonts/source-serif-pro/source-serif-pro.css', 1) }}" />
   <link rel="stylesheet" type="text/css" href="{{ pathto('_static/css/bootstrap.min.css', 1) }}" />
   <link rel="stylesheet" type="text/css" href="{{ pathto('_static/css/bootstrap-theme.min.css', 1) }}" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {{ super() }}
 {%- endblock %}
@@ -92,71 +95,56 @@
   {% endif %}
 {%- endmacro %}
 
-{%- macro guzzle_sidebar() %}
-  <div id="left-column">
-    <div class="sphinxsidebar">
-      {%- if sidebars != None %}
-        {#- new style sidebar: explicitly include/exclude templates #}
-        {%- for sidebartemplate in sidebars %}
-        {%- include sidebartemplate %}
-        {%- endfor %}
-      {% else %}
-        {% include "logo-text.html" %}
-        {% include "globaltoc.html" %}
-        {% include "searchbox.html" %}
-      {%- endif %}
-    </div>
-  </div>
-{%- endmacro %}
-
 {%- block content %}
+  <div class="container-wrapper">
+    <header>
+      <nav>
+        <a target="_blank" href="https://pyinfra.com">pyinfra.com<span class="glyphicon glyphicon glyphicon-share" aria-hidden="true"></span></a>
+        <a target="_blank" href="https://github.com/Fizzadar/pyinfra">GitHub<span class="glyphicon glyphicon glyphicon-share" aria-hidden="true"></span></a>
+      </nav>
 
-  {%- if pagename == 'index' and theme_index_template %}
-    {% include theme_index_template %}
-  {%- else %}
-    <div class="container-wrapper">
+      <div id="header-sidebar">
+        {% include "logo-text.html" %}
+        {% include "searchbox.html" %}
+      </div>
 
       <div id="mobile-toggle">
         <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+        {% include "logo-text.html" %}
       </div>
+    </header>
 
-      {%- block sidebar1 %}{{ guzzle_sidebar() }}{% endblock %}
-
-      {%- block document_wrapper %}
-        {%- block document %}
-        <div id="right-column">
-          {% block breadcrumbs %}
-          <div role="navigation" aria-label="breadcrumbs navigation">
-            <ol class="breadcrumb">
-              <li><a href="{{ pathto(master_doc) }}">Docs</a></li>
-              {% for doc in parents %}
-                <li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
-              {% endfor %}
-              <li>{{ title }}</li>
-            </ol>
-          </div>
-          {% endblock %}
-          <div class="document clearer body" role="main">
-            {% block body %} {% endblock %}
-          </div>
-          {%- block bottom_rel_links %}
-            {{ render_relations() }}
-          {%- endblock %}
-        </div>
-        <div class="clearfix"></div>
-        {%- endblock %}
-      {%- endblock %}
-
-      {%- block comments -%}
-        {% if theme_disqus_comments_shortname %}
-        <div class="container comment-container">
-          {% include "comments.html" %}
-        </div>
-        {% endif %}
-      {%- endblock %}
+    {%- block sidebar1 %}
+    <div id="left-column">
+      <div class="sphinxsidebar">
+        {% include "globaltoc.html" %}
+      </div>
     </div>
-  {%- endif %}
-  {%- endblock %}
+    {% endblock %}
+
+    {%- block document_wrapper %}
+      {%- block document %}
+      <div id="right-column">
+        <div class="document clearer body" role="main">
+          {% block body %} {% endblock %}
+        </div>
+        {%- block bottom_rel_links %}
+          {{ render_relations() }}
+        {%- endblock %}
+      </div>
+      <div class="clearfix"></div>
+      {%- endblock %}
+    {%- endblock %}
+
+    {%- block comments -%}
+      {% if theme_disqus_comments_shortname %}
+      <div class="container comment-container">
+        {% include "comments.html" %}
+      </div>
+      {% endif %}
+    {%- endblock %}
+  </div>
+{%- endblock %}
 
 {%- block footer %}
 <script type="text/javascript">
@@ -169,18 +157,13 @@
   <div class="footer">
   </div>
 {%- endblock %}
-{%- block ga %}
-  {%- if theme_google_analytics_account %}
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', '{{ theme_google_analytics_account }}']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-  {%- endif %}
-{%- endblock %}
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+    apiKey: 'e2522266be34dfb8a0044c09cbf4c8b3',
+    indexName: 'pyinfra',
+    inputSelector: '#docsearch-input',
+    debug: true,
+});
+</script>
 {%- endblock %}

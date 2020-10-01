@@ -39,7 +39,8 @@ a.headerlink::after {
 a {
   color: #53ac63;
 }
-a:hover {
+a:hover, a:focus {
+  outline: none;
   color: #53ac63;
   text-decoration-color: #E7E7E7;
   text-decoration-thickness: 2px;
@@ -238,16 +239,16 @@ header {
 }
 
 form#main-search {
-  padding: 0 18px;
   border-bottom: 1px solid #E7E7E7;
 }
 input#docsearch-input {
-  width: 264px;
+  width: 299px;
+  padding: 0 18px;
   border: none;
   border-bottom: 1px solid #E7E7E7;
   outline: none;
   box-shadow: none;
-  border-radius: 4px 4px 0 0;
+  border-radius: 0;
   margin-bottom: -1px;
 }
 input#docsearch-input:focus {
@@ -982,12 +983,12 @@ span.eqno {
   left: 0;
   background-color: #fff;
   z-index: 1;
-  padding: 2px 6px;
+  padding: 2px 20px;
 }
 #mobile-toggle a.text-logo {
   display: inline;
   padding: 0;
-  margin-left: 10px;
+  float: right;
 }
 #mobile-toggle a.text-logo img {
   width: 32px;
@@ -998,7 +999,6 @@ span.eqno {
 -------------------------------------------------- */
 
 @media screen and (max-width: 768px) {
-
   body {
     padding: 0px;
     margin: 0px;
@@ -1007,8 +1007,8 @@ span.eqno {
 
   h1 {
     margin-left: 0;
+    margin-top: 10px;
     width: 100%;
-    padding: 10px;
     font-size: 40px;
   }
 
@@ -1050,6 +1050,10 @@ span.eqno {
 
   #mobile-toggle {
     display: block;
+  }
+  #mobile-toggle .glyphicon {
+    font-size: 20px;
+    padding-top: 5px;
   }
 
   #header-sidebar {
@@ -1138,8 +1142,8 @@ span.eqno {
 .il { color: #009999 } /* Literal.Number.Integer.Long */
 
 
-/*
-    Index only */
+/* Index "columns"
+-------------------------------------------------- */
 
 div#pyinfra-documentation div.compound {
     width: 46%;
@@ -1163,4 +1167,16 @@ div#pyinfra-documentation div.compound.toctree-wrapper {
   div#pyinfra-documentation div.compound {
     width: 100%;
   }
+}
+
+
+/* Docsearch
+-------------------------------------------------- */
+
+.algolia-autocomplete.algolia-autocomplete-left .ds-dropdown-menu {
+  left: 10px !important;
+}
+
+.algolia-autocomplete.algolia-autocomplete-left .ds-dropdown-menu::before {
+  left: 15px !important;
 }

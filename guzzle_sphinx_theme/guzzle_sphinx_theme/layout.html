@@ -104,13 +104,18 @@
       </nav>
 
       <div id="header-sidebar">
-        {% include "logo-text.html" %}
+        <a href="{{ pathto('index') }}" class="text-logo">
+            <img src="{{ pathto('_static/logo_small.png', 1) }}" />
+            pyinfra
+        </a>
         {% include "searchbox.html" %}
       </div>
 
       <div id="mobile-toggle">
-        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
-        {% include "logo-text.html" %}
+        <a id="toggle-menu" href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+        <a href="{{ pathto('index') }}" class="text-logo">
+            <img src="{{ pathto('_static/logo_small.png', 1) }}" />
+        </a>
       </div>
     </header>
 
@@ -134,14 +139,6 @@
       </div>
       <div class="clearfix"></div>
       {%- endblock %}
-    {%- endblock %}
-
-    {%- block comments -%}
-      {% if theme_disqus_comments_shortname %}
-      <div class="container comment-container">
-        {% include "comments.html" %}
-      </div>
-      {% endif %}
     {%- endblock %}
   </div>
 {%- endblock %}

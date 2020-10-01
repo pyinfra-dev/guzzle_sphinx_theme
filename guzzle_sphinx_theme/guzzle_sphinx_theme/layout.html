@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="docsearch:version" content="{{ version }}" />
+  <meta name="docsearch:language" content="{{ language }}" />
   {{ super() }}
 {%- endblock %}
 
@@ -145,8 +147,8 @@
 
 {%- block footer %}
 <script type="text/javascript">
-  $("#mobile-toggle a").click(function () {
-    $("#left-column").toggle();
+  $("a#toggle-menu").click(function () {
+    $("#left-column").slideToggle(100);
   });
 </script>
 <script type="text/javascript" src="{{ pathto('_static/js/bootstrap.js', 1)}}"></script>
@@ -160,7 +162,10 @@
     apiKey: 'e2522266be34dfb8a0044c09cbf4c8b3',
     indexName: 'pyinfra',
     inputSelector: '#docsearch-input',
-    debug: true,
+    algoliaOptions: {
+      'facetFilters': ["version:{{ version }}", "lang:{{ language }}"],
+    },
+    debug: false,
 });
 </script>
 {%- endblock %}

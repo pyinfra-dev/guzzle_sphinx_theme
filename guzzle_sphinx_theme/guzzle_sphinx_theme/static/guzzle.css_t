@@ -1,3 +1,14 @@
+/* roboto-slab-500 - latin */
+@font-face {
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''),
+       url('./fonts/roboto-slab-v10-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./fonts/roboto-slab-v10-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
 /* Sphinx themes
 -------------------------------------------------- */
 
@@ -5,7 +16,7 @@ body {
   background: white;
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
   font-size: 16px;
   color: #2c3e50;
   line-height: 1.6;
@@ -13,7 +24,8 @@ body {
 
 #right-column {
   padding-top: 20px;
-  padding-left: 300px;
+  padding-left: 340px;
+  padding-right: 40px;
   margin: 0 auto;
   max-width: 1300px;
 }
@@ -69,9 +81,12 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2, h3 {
   margin-top: 30px;
   margin-bottom: 20px;
+  font-family: 'Roboto Slab';
+  font-weight: 500;
 }
 
 h1 {
+  margin-top: 27px;
   font-size: 38px;
   padding: 10px 10px 10px 0;
   border-bottom: 1px solid #e7e7e7;
@@ -223,8 +238,8 @@ header {
   font-size: 18px;
   display: block;
   padding: 16px 0px 16px 18px;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto Slab';
+  font-weight: 500;
   color: #606060;
   /*margin-bottom: -18px;*/
 }
@@ -332,7 +347,6 @@ div.sphinxsidebar .sidebar-toc ul {
 }
 
 div.sphinxsidebar .sidebar-toc a {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #444;
   text-decoration: none;
 }
@@ -391,7 +405,6 @@ div.sphinxsidebar .sidebar-toc ul ul {
 
 div.sphinxsidebar input {
   border: 1px solid #ccc;
-  font-family: Helvetica, arial, freesans, clean, sans-serif;
   font-size: 1em;
 }
 
@@ -408,7 +421,6 @@ div.sphinxsidebar input {
   border-bottom: none;
   margin: 0 0 17px 0;
   font-size: 14px;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   padding: 0 0 6px 0;
   font-weight: bold;
   text-transform: uppercase;
@@ -721,7 +733,6 @@ div.topic.contents > ul {
   font-weight: bold;
   font-size: 18px;
   line-height: 1.1;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .admonition.danger,
@@ -887,7 +898,6 @@ dt:target, .highlight {
   font-weight: bold;
   font-size: 18px;
   line-height: 1.1;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #fff;
   background-color: #337ab7;
 }

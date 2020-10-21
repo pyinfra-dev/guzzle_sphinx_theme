@@ -153,15 +153,26 @@
   </div>
 {%- endblock %}
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-<script type="text/javascript"> docsearch({
-    apiKey: 'e2522266be34dfb8a0044c09cbf4c8b3',
-    indexName: 'pyinfra',
-    inputSelector: '#docsearch-input',
-    algoliaOptions: {
-      'facetFilters': ["version:{{ version }}", "lang:{{ language }}"],
-    },
-    debug: false,
-});
-</script>
+{% if theme_docsearch_api_key and theme_docsearch_index_name %}
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+  <script type="text/javascript"> docsearch({
+      apiKey: '{{ theme_docsearch_api_key }}',
+      indexName: '{{ theme_docsearch_index_name }}',
+      inputSelector: '#docsearch-input',
+      algoliaOptions: {
+        'facetFilters': ["version:{{ version }}", "lang:{{ language }}"],
+      },
+      debug: false,
+  });
+  </script>
+{% endif %}
+
+{% if theme_plausible_domain %}
+  {% if theme_plausible_stats_domain %}
+    <script async defer data-domain="{{ theme_plausible_domain }}" src="https://{{ theme_plausible_stats_domain }}/js/index.js"></script>
+  {% else %}
+    <script async defer data-domain="{{ theme_plausible_domain }}" src="https://plausible.io/js/plausible.js"></script>
+  {% endif %}
+{% endif %}
+
 {%- endblock %}

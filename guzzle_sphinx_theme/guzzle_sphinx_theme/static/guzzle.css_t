@@ -252,6 +252,9 @@ header {
   height: 44px;
   width: 44px;
 }
+.text-logo small {
+  color: #a7a7a7;
+}
 
 form#main-search {
   border-bottom: 1px solid #E7E7E7;

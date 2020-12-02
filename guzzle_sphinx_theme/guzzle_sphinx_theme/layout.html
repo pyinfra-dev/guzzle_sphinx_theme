@@ -132,12 +132,12 @@
           {% if version == theme_latest_doc_version %}
             <div class="admonition important">
                 <p class="first admonition-title">Documentation may contain unreleased features!</p>
-                <p>You are reading most recent documentation which may not have been released yet. <a href="/{{ language }}/{{ theme_primary_doc_version }}"><strong>{{ theme_primary_doc_version }}</strong></a> is the latest release version available.</p>
+                <p>You are reading most recent documentation which may not have been released yet. <a href="/{{ language }}/{{ theme_primary_doc_version }}/{{ pagename }}.html"><strong>{{ theme_primary_doc_version }}</strong></a> is the latest release version available.</p>
             </div>
           {% else %}
             <div class="admonition important">
                 <p class="first admonition-title">Documentation may be out of date!</p>
-                <p>You are not reading the most recent version the documentation. <a href="/{{ language }}/{{ theme_primary_doc_version }}"><strong>{{ theme_primary_doc_version }}</strong></a> is the latest release version available.</p>
+                <p>You are not reading the most recent version the documentation. <a href="/{{ language }}/{{ theme_primary_doc_version }}/{{ pagename }}.html"><strong>{{ theme_primary_doc_version }}</strong></a> is the latest release version available.</p>
             </div>
           {% endif %}
         {% endif %}

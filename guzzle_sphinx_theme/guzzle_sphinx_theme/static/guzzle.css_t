@@ -235,25 +235,28 @@ header {
 }
 
 .text-logo {
-  font-size: 18px;
+  font-size: 24px;
   display: block;
   padding: 16px 0px 16px 18px;
   font-family: 'Roboto Slab';
   font-weight: 500;
   color: #606060;
-  /*margin-bottom: -18px;*/
 }
-.text-logo:hover {
+.text-logo:hover, .text-logo:active {
   color: #2c3e50;
   text-decoration: none;
-  /*background: #F7F7F7;*/
 }
 .text-logo img {
   height: 44px;
   width: 44px;
+  margin-right: 6px;
 }
 .text-logo small {
   color: #a7a7a7;
+  font-size: 16px;
+}
+.text-logo:hover small {
+  color: #2c3e50;
 }
 
 form#main-search {
@@ -1004,8 +1007,10 @@ span.eqno {
   float: right;
 }
 #mobile-toggle a.text-logo img {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
+  margin-right: 0;
+  margin-top: -8px;
 }
 
 /* Small screen styles

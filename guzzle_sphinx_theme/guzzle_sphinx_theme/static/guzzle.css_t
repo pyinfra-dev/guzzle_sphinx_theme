@@ -92,6 +92,9 @@ h1 {
   border-bottom: 1px solid #e7e7e7;
   width: 100%;
 }
+h1 code {
+  font-size: 38px;
+}
 
 h2 {
   font-size: 34px;
@@ -234,7 +237,8 @@ header {
   border-right: 1px solid #E7E7E7;
 }
 
-.text-logo {
+a.text-logo {
+  text-decoration: none;
   font-size: 24px;
   display: block;
   padding: 16px 0px 16px 18px;
@@ -242,7 +246,7 @@ header {
   font-weight: 500;
   color: #606060;
 }
-.text-logo:hover, .text-logo:active {
+a.text-logo:hover, a.text-logo:active {
   color: #2c3e50;
   text-decoration: none;
 }
@@ -723,6 +727,13 @@ div.topic.contents > ul {
   border: 1px solid #eee;
   border-left-width: 6px;
   border-radius: 4px;
+}
+
+.admonition.inline p {
+  display: inline-block;
+}
+.admonition.hide-title .admonition-title {
+  display: none;
 }
 
 .admonition dt {

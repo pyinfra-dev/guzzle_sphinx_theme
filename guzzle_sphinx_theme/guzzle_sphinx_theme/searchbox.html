@@ -1,7 +1,9 @@
 {%- if pagename != "search" %}
 <form id="main-search" class="form-inline" action="{{ pathto('search') }}" method="GET" role="form">
-  <input id="docsearch-input" name="q" type="text" class="form-control" placeholder="Search...">
-  <input type="hidden" name="check_keywords" value="yes" />
-  <input type="hidden" name="area" value="default" />
+  <div id="docsearch">
+    <input id="search-input" name="q" type="text" class="form-control" placeholder="Search...">
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </div>
 </form>
 {%- endif %}

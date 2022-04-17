@@ -282,7 +282,7 @@ input#search-input:focus {
 }
 
 .DocSearch-Button {
-  padding: 0 17px 25px 17px;
+  padding: 0 17px 10px 17px;
   color: #999;
   background: white;
   margin: 0;

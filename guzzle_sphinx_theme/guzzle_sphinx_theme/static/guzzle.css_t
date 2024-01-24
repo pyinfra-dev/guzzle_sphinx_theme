@@ -486,6 +486,19 @@ div.sphinxsidebar input {
 /* Two-pane table list
 -------------------------------------------------- */
 
+.table-bordered {
+  border: none;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > td {
+  border-left-width: 0;
+  border-right-width: 0;
+  padding: 8px 0;
+}
+.table-bordered > tbody > tr:last-child > td {
+  border-bottom-width: 0;
+}
+
 .table-bordered>thead>tr>th,
 .table-bordered>tbody>tr>th,
 .table-bordered>tfoot>tr>th,
@@ -716,6 +729,23 @@ img.align-center, .figure.align-center, object.align-center {
   text-align: right;
 }
 
+.section h1 {
+  border: none;
+}
+
+.section h2 {
+  border-bottom-width: 4px;
+
+}
+
+.section:target > h2 {
+  border-color: #53ac63;
+}
+
+.section:target > h3 {
+  color: #53ac63;
+}
+
 /* -- topics ---------------------------------------------------------------- */
 
 div.topic {
@@ -741,6 +771,18 @@ div.topic.contents {
 
 div.topic.contents > ul {
     padding-left: 20px;
+}
+
+/* -- flex bits-------------------------------------------------------------- */
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.admonition.flex-half {
+  width: 49%;
 }
 
 /* -- admonitions ----------------------------------------------------------- */

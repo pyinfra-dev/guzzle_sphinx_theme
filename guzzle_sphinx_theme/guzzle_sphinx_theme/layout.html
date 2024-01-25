@@ -155,6 +155,8 @@
 {%- endblock %}
 
 {%- block footer %}
+<script type="text/javascript" src="{{ pathto('_static/js/jquery.min.js', 1)}}"></script>
+<script type="text/javascript" src="{{ pathto('_static/js/bootstrap.min.js', 1)}}"></script>
 <script type="text/javascript">
   $("a#toggle-menu").click(function () {
     $("#left-column").slideToggle(100);
@@ -165,7 +167,6 @@
     currentIndexItem.scrollIntoView({'block': 'center'});
   }
 </script>
-<script type="text/javascript" src="{{ pathto('_static/js/bootstrap.js', 1)}}"></script>
 {%- block footer_wrapper %}
   <div class="footer">
   </div>

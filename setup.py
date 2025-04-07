@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="pyinfra-guzzle_sphinx_theme",
-    version="0.16",
+    version="0.17",
     description="Sphinx theme used by Guzzle, with customisations for pyinfra.",
     author="Michael Dowling (modified by Nick Barrett)",
     author_email="pointlessrambler@gmail.com",

@@ -1241,26 +1241,26 @@ span.eqno {
 /* Index "columns"
 -------------------------------------------------- */
 
-div#pyinfra-documentation div.compound {
+#pyinfra-documentation div.compound {
     width: 46%;
     margin-right: 3%;
     margin-top: 20px;
     display: inline-block;
     vertical-align: top;
 }
-div#pyinfra-documentation div.compound.toctree-wrapper {
+#pyinfra-documentation div.compound.toctree-wrapper {
     display: none;
 }
-    div#pyinfra-documentation div.compound a {
+    #pyinfra-documentation div.compound a {
         font-size: 18px;
     }
-    div#pyinfra-documentation div.compound dd {
+    #pyinfra-documentation div.compound dd {
         margin-left: 0;
     }
 
 
 @media screen and (max-width: 768px) {
-  div#pyinfra-documentation div.compound {
+  #pyinfra-documentation div.compound {
     width: 100%;
   }
 }
